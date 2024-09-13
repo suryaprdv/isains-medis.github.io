@@ -1,0 +1,983 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #ffffff;
+    color: white;
+    width: 100%;
+    padding: 20px 0;
+    max-width: 1000px;
+    height: 140px;
+    margin: 0 auto;
+    border-top-left-radius: 20px; /* Sudut atas kiri melengkung */
+    border-top-right-radius: 20px; /* Sudut atas kanan melengkung */
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px; /* Sesuaikan dengan lebar carousel dan navbar */
+    margin: 0 auto;
+}
+
+ .logo img {
+  max-width: 200px;
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+
+}
+
+nav {
+    background-color: #00b9db;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    margin: 0 auto;
+    max-width: 1000px; /* Sesuaikan dengan lebar carousel */
+}
+
+nav a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 1.5;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1000px; /* Sesuaikan lebar maksimal sesuai kebutuhan */
+    height: 400px; /* Sesuaikan tinggi carousel sesuai kebutuhan */
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.carousel-item {
+    flex: 0 0 100%; /* Menyebabkan setiap item memiliki lebar 100% dari kontainer carousel */
+    height: 100%; /* Membuat item carousel memanfaatkan tinggi penuh dari carousel */
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar menutupi seluruh area */
+    display: block;
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 24px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.about, .disclaimer, .contact {
+    text-align: center;
+    padding: 10px 0;
+    background-color: white;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 1000px; /* Sesuaikan dengan lebar carousel */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.images img {
+    width: 300px;
+    height: auto;
+    flex: 0 0 auto;
+}
+
+}
+
+.contact button {
+    display: block;
+    width: 220px;
+    padding: 12px;
+    margin: 40px auto;
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #00509e;
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #00b9db;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+   max-width: 1000px;
+    margin: 0 auto;
+    border-bottom-left-radius: 20px; /* Sudut bawah kiri melengkung */
+    border-bottom-right-radius: 20px; /* Sudut bawah kanan melengkung */
+}
+
+.videos-images {
+    max-width: 1000px; /* Maksimal lebar kontainer */
+    margin: 0 auto; /* Pusatkan konten */
+    padding: 10px;
+}
+
+/* Baris pertama: Tiga video */
+.video-row {
+    display: flex;
+    justify-content: space-between; /* Menjaga jarak antar video */
+    margin-bottom: 10px;
+}
+
+.video-container {
+    flex: 1;
+    max-width: calc(33.33% - 20px); /* Lebar maksimal video */
+    box-sizing: border-box;
+    margin-right: 10px; /* Jarak antar video */
+}
+
+.video-container:last-child {
+    margin-right: 0; /* Hapus margin kanan dari video terakhir */
+}
+
+video {
+    width: 100%; /* Memenuhi lebar kontainer */
+    height: auto; /* Menjaga rasio aspek */
+    border-radius: 10px; /* Sudut melengkung */
+    max-height: 300px; /* Mengatur tinggi maksimal video */
+}
+
+/* Baris kedua: Satu video di kiri dan dua gambar di kanan */
+.second-row {
+    display: flex;
+    gap: 10px; /* Jarak antar elemen dalam baris */
+}
+
+.single-video-container {
+    flex: 1;
+    max-width: 30%; /* Lebar maksimal video */
+}
+
+.single-video-container video {
+    width: 100%; /* Memenuhi lebar kontainer */
+    height: auto; /* Menjaga rasio aspek */
+    border-radius: 10px; /* Sudut melengkung */
+    max-height: 300px; /* Mengatur tinggi maksimal video */
+}
+
+.image-group {
+    display: flex;
+    flex-direction: row; /* Gambar ditata secara vertikal */
+    gap: 10px;
+    flex: 1;
+    max-width: 70%; /* Lebar maksimal gambar */
+}
+
+.image-group img {
+    width: 100%; /* Memenuhi lebar kontainer gambar */
+    height: auto; /* Menjaga rasio aspek */
+    border-radius: 10px; /* Sudut melengkung */
+    max-height: 300px; /* Mengatur tinggi maksimal gambar */
+}
+
+/* Gambar penuh di bawah carousel */
+.full-width-image img {
+    width: 100%;
+    max-width: 1000px; /* Sesuaikan dengan lebar maksimal header dan carousel */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* Bagian Jurnal dengan Background Putih dan Batas Garis */
+.jurnal-section {
+    padding: 15px 15px; /* Sesuaikan padding */
+    background-color: #f4f4f4;
+    text-align: center;
+   
+}
+
+.jurnal-image-text {
+    max-width: 950px; /* Sesuaikan dengan lebar header dan carousel */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row; /* Atur layout menjadi horizontal */
+    align-items: center;
+    background-color: #ffffff; /* Latar belakang putih */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Bayangan */
+    border: 2px solid #ddd; /* Batas garis */
+}
+
+.jurnal-image {
+    width: 40%; /* Lebar gambar 40% dari container */
+    height: auto;
+    margin-right: 20px; /* Jarak antara gambar dan teks */
+    border-radius: 10px;
+}
+
+.jurnal-text {
+    width: 60%; /* Lebar teks 60% dari container */
+    text-align: left;
+    color: #003366;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.jurnal-section-1 {
+    padding: 15px 15px; /* Sesuaikan padding */
+    background-color: #f4f4f4;
+    text-align: center;
+   
+}
+
+.jurnal-image-text-1 {
+    max-width: 950px; /* Sesuaikan dengan lebar header dan carousel */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row; /* Atur layout menjadi horizontal */
+    align-items: center;
+    background-color: #ffffff; /* Latar belakang putih */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Bayangan */
+    border: 2px solid #ddd; /* Batas garis */
+}
+
+.jurnal-image-1 {
+    width: 50%; /* Lebar gambar 40% dari container */
+    height: 500px;
+    margin-right: 20px; /* Jarak antara gambar dan teks */
+    border-radius: 10px;
+}
+
+.jurnal-text-1 {
+    width: 60%; /* Lebar teks 60% dari container */
+    text-align: left;
+    color: #003366;
+    font-size: 18px;
+    line-height: 1.6;
+}
+/* Bagian Jurnal 2 dengan Background Putih dan Batas Garis */
+.jurnal-section-2 {
+    padding: 2px 2px; /* Sesuaikan padding */
+    background-color: #f4f4f4;
+    text-align: center;
+    
+}
+
+.jurnal-image-text-2 {
+    max-width: 950px; /* Sesuaikan dengan lebar header dan carousel */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Mengatur layout menjadi vertikal */
+    align-items: center;
+    background-color: #ffffff; /* Latar belakang putih */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Bayangan */
+    border: 2px solid #ddd; /* Batas garis */
+
+}
+
+.jurnal-image-2 {
+    width: 100%; /* Lebar gambar 100% dari container */
+    max-width: 900px; /* Batas lebar maksimal gambar */
+    height: auto;
+    margin-bottom: 20px; /* Jarak antara gambar dan teks */
+    border-radius: 10px;
+     max-height: 300px;
+}
+
+.jurnal-text-2 {
+    text-align: left;
+    max-width: 800px;
+    color: #003366;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Bagian Jurnal 2 dengan Background Putih dan Batas Garis */
+.jurnal-section-13 {
+    padding: 2px 2px; /* Sesuaikan padding */
+    background-color: #f4f4f4;
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+
+.jurnal-image-text-13 {
+    max-width: 950px; /* Sesuaikan dengan lebar header dan carousel */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Mengatur layout menjadi vertikal */
+    align-items: center;
+    background-color: #ffffff; /* Latar belakang putih */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Bayangan */
+    border: 2px solid #ddd; /* Batas garis */
+
+
+}
+
+.jurnal-image-13 {
+    width: 100%; /* Lebar gambar 100% dari container */
+    max-width: 900px; /* Batas lebar maksimal gambar */
+    height: auto;
+    margin-bottom: 20px; /* Jarak antara gambar dan teks */
+    border-radius: 10px;
+     max-height: 300px;
+}
+
+.jurnal-text-13 {
+    text-align: left;
+    max-width: 800px;
+    color: #003366;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Kerjasama Pengelolaan Jurnal */
+.collaboration {
+    padding: 40px 20px;
+    text-align: center;
+     background-color: #f9f9f9;
+    max-width: 965px;
+    margin: 0 auto;
+}
+
+.collaboration h1 {
+    font-size: 24px;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.collaboration p {
+    font-size: 18px;
+    color: #555555;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 800px; /* Menyempitkan lebar teks untuk readability */
+}
+
+/* Kotak Tabel Jurnal */
+.journal-table {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #f9f9f9; /* Warna latar belakang tabel */
+    margin: 20px auto;
+    max-width: 965px;
+}
+
+.journal-card {
+    width: calc(33.333% - 20px); /* Menyesuaikan lebar card dengan jarak */
+    padding: 20px;
+    margin: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #003366; /* Garis border */
+    text-align: center;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.journal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.journal-card h2 {
+    font-size: 18px;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.journal-card h2 a {
+    text-decoration: none;
+    color: #003366;
+}
+
+.journal-card p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Tombol untuk Teks Tertentu */
+.journal-card .button {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #003366;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.journal-card .button:hover {
+    background-color: #00509e;
+}
+
+/* Fasilitas yang Kami Tawarkan */
+.facilities {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.facilities h2 {
+    font-size: 24px;
+    color: #003366;
+    margin-bottom: 20px;
+     background-color: #f9f9f9;
+}
+
+.facility-image {
+     max-width: 960px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+     background-color: #f9f9f9;
+}
+
+.facilities p {
+    font-size: 18px;
+    color: #555555;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #003366;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.contact-button:hover {
+    background-color: #002244;
+}
+
+/* Style for the dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style for the dropdown button */
+.dropbtn {
+    color: #ffffff; /* Color of the dropdown button text */
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent; /* No background color for the button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Optional: Rounded corners for the button */
+}
+
+/* Style for the dropdown menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    min-width: 160px; /* Minimum width of the dropdown menu */
+}
+
+/* Style for the links inside the dropdown menu */
+.dropdown-content a {
+    color: #003366;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Change background color on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Optional: Add hover effect for the dropdown button */
+.dropdown:hover .dropbtn {
+    text-decoration: underline; /* Underline text on hover */
+}
+
+/* General style for the dropdown container */
+.dropdown, .nested-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style for the dropdown button */
+.dropbtn {
+    color: #ffffff; /* Color of the dropdown button text */
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent; /* No background color for the button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Optional: Rounded corners for the button */
+}
+
+/* Style for the dropdown menu */
+.dropdown-content, .nested-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    min-width: 160px; /* Minimum width of the dropdown menu */
+}
+
+/* Style for the links inside the dropdown menu */
+.dropdown-content a, .nested-dropdown-content a {
+    color: #003366;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Change background color on hover */
+.dropdown-content a:hover, .nested-dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Show the nested dropdown menu on hover */
+.nested-dropdown:hover .nested-dropdown-content {
+    display: block;
+    top: 0; /* Aligns nested dropdown to appear below the parent dropdown */
+    left: 100%; /* Positions nested dropdown to the right of the parent dropdown */
+}
+
+/* Optional: Add hover effect for the dropdown button */
+.dropdown:hover .dropbtn, .nested-dropdown:hover .dropbtn {
+    text-decoration: underline; /* Underline text on hover */
+}
+
+/* Styling untuk tabel harga */
+.pricing-table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse; /* Menghilangkan jarak antar border */
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff
+}
+
+.pricing-table table {
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+.pricing-table th, .pricing-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.pricing-table th {
+    background-color: #003366; /* Warna latar belakang header tabel */
+    color: #ffffff; /* Warna teks header tabel */
+    font-weight: bold;
+}
+
+.pricing-table tr:nth-child(even) {
+    background-color: #f4f4f4; /* Warna latar belakang baris genap */
+}
+
+.pricing-table tr:nth-child(odd) {
+    background-color: #ffffff; /* Warna latar belakang baris ganjil */
+}
+
+.pricing-table td {
+    line-height: 1.6; /* Jarak antar baris dalam sel */
+}
+
+.pricing-table td, .pricing-table th {
+    border: 1px solid #ddd;
+}
+
+/* Styling untuk Kontak Editorial */
+.contact-editorial {
+    margin: 20px auto;
+    max-width: 960px;
+    padding: 20px;
+    background-color: #f9f9f9; /* Warna latar belakang area kontak */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Membuat sudut border menjadi membulat */
+}
+
+.contact-editorial h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #003366; /* Warna teks judul */
+}
+
+.contact-editorial p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #333; /* Warna teks paragraf */
+}
+
+.contact-editorial a {
+    color: #003366; /* Warna link */
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+    font-weight: bold;
+}
+
+.contact-editorial a:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+}
+
+.contact-editorial .social-links {
+    margin-top: 20px;
+}
+
+.contact-editorial .social-links a {
+    margin-right: 15px;
+    font-size: 18px;
+    color: #003366; /* Warna icon media sosial */
+}
+
+.contact-editorial .social-links a:hover {
+    color: #006699; /* Warna icon media sosial saat hover */
+}
+
+.contact-editorial .contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #003366; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    text-align: center;
+    text-decoration: none; /* Menghilangkan garis bawah pada tombol */
+    border-radius: 5px; /* Membuat sudut tombol menjadi membulat */
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.penerbitan-section {
+    padding: 15px 15px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.penerbitan-content {
+    max-width: 950px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row; /* Tata letak horizontal */
+    align-items: flex-start;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ddd;
+}
+
+.penerbitan-media {
+    width: 40%; /* Lebar 40% untuk media (gambar dan PDF) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px; /* Jarak antara media dan teks */
+}
+
+.book-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px; /* Jarak antara gambar dan PDF */
+    border-radius: 10px;
+}
+
+.pdf-widget {
+    width: 100%;
+    height: 400px; /* Tinggi dari embed PDF */
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.penerbitan-text {
+    width: 60%; /* Lebar 60% untuk teks */
+    text-align: left;
+    color: #000000;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: #00b9db; /* Warna biru muda */
+}
+
+.download-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #003366;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.download-link:hover {
+    background-color: #005999;
+}
+
+.buku-lainnya-section {
+    padding: 20px;
+    background-color: #ffffff; /* Latar belakang putih */
+    max-width: 950px; /* Sesuaikan dengan lebar konten sebelumnya */
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Bayangan */
+    border: 2px solid #ddd; /* Batas garis */
+}
+
+.buku-lainnya-section h2 {
+    text-align: center;
+    color: #003366; /* Warna judul */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.buku-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.buku-list li {
+    margin-bottom: 10px;
+}
+
+.buku-list a {
+    text-decoration: none;
+    color: #003366; /* Warna link */
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.buku-list a:hover {
+    text-decoration: underline; /* Efek hover */
+}
+/* styles.css */
+
+/* Container untuk teks dengan max-width 1000px */
+.content-wrapper {
+    max-width: 950px;
+    margin: 20px auto; /* Center horizontally with space around */
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Slight shadow for better visibility */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Gaya untuk bagian teks "Terpercaya Sejak 2012" */
+.trusted-since {
+    margin: 0; /* Reset margin */
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.trusted-since h3 {
+    font-size: 24px;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.trusted-since p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.location {
+            margin: 40px 0;
+            text-align: center;
+        }
+        .location h2 {
+            margin: 0;
+            padding-bottom: 10px;
+            font-size: 24px;
+            color: #003366;
+            border-bottom: 2px solid #003366;
+        }
+        .map-container {
+            width: 100%;
+            height: 400px; /* Sesuaikan tinggi peta sesuai kebutuhan */
+            margin-bottom: 40px;
+            border: 1px solid #ddd;
+            margin: 0 auto;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gaya untuk kontainer utama yang berisi alamat dan peta */
+.location-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #fff;
+    max-width: 950px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Gaya untuk bagian alamat */
+.address {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.address h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.address p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Gaya untuk kontainer peta */
+.map-container {
+    flex: 1;
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Gaya untuk bagian teks galeri */
+.gallery-section h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Gaya untuk kontainer galeri */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #fff;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Gaya untuk setiap item galeri */
+.gallery-item {
+    flex-basis: calc(33.33% - 10px); /* Membuat 3 kolom dengan jarak antar gambar */
+    margin-bottom: 15px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Gaya untuk gambar dalam galeri */
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
